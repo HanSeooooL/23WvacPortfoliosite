@@ -1,0 +1,39 @@
+@font-face{
+    font-family:'bitbit';
+    src:url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff'),url('//cdn.df.nexon.com/img/common/font/DNFBitBit-Regular.woff2') ;
+}
+
+.LinkText {
+    font-family: 'bitbit';
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.NavHeaderText {
+    font-family: 'bitbit';
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+    text-shadow: 2px 2px 4px black;
+}
+
+.LinkStyle {
+    padding-left: 50px;
+    padding-bottom: 20px;
+}
+
+.active {
+    font-family: 'bitbit';
+    text-decoration: none;
+    background: linear-gradient(to top, orange, white);
+    color: transparent;
+    font-size: larger;
+    -webkit-background-clip: text;
+}
+
+.NavHeader {
+    padding-top: 30px;
+    padding-bottom: 80px;
+    padding-left: 50px;
+}
