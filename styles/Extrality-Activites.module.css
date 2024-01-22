@@ -1,0 +1,29 @@
+.mainscreen {
+    padding: 10px;
+    padding-left: 20px;
+    font-size: larger;
+}
+
+.datascreen {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 0.5fr 100px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.mainheader {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.seeButton {
+    padding-top:16px;
+}
+
+.Button {
+    font-size: 0.8rem;
+    font-weight: 400;
+    width: 50px;
+}

@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <>
             <div className={`${style.Footerglobal}`}>
-                한설의 포트폴리오 사이트
+                포트폴리오 사이트
             </div>
         </>
     )

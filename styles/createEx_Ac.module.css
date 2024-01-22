@@ -9,12 +9,6 @@
     margin: 10px;
 }
 
-.Button_Upload {
-    font-size: 0.8rem;
-    width: 80px;
-    margin: 10px;
-}
-
 .MainArea {
     padding-left: 5vw;
     padding-top: 1vw;
@@ -27,20 +21,14 @@
     width: 70vw;
 }
 
-.description {
-    margin-top: 10px;
-    width: 60vw;
-    height: 20vw;
-}
-
-.githubLink {
+.host {
     width: 56vw;
 }
 
-.date {
-
+.awarded {
+    width: 56vw;
 }
 
-.uploadfiles {
-    margin-top: 15px;
+.link {
+    width: 56vw;
 }
