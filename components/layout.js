@@ -1,4 +1,5 @@
 import ContentHeader from "./ContentHeader";
+import Footer from "./Footer";
 import NavBar from "./NavBar";
 
 export default function Layout({ children }) {
@@ -19,13 +20,16 @@ export default function Layout({ children }) {
                     </div>
                 </div>
             </div>
+            <div>
+                <Footer />
+            </div>
             <style jsx>{`
                 .container {
                     display: grid;
                     grid-template-columns: 200px 1fr;
                     grid-template-rows: 1fr;
-                    width: 100vw;
-                    height: 100vh;
+                    width: 100%;
+                    height: 100%;
                     background: gray;
                     padding: 0px;
                 }

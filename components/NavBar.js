@@ -12,7 +12,7 @@ export default function NavBar() {
                 </Link>
             </div>
             <div className={`${styles.LinkStyle}`}>
-                <Link href="/Project" className={`${router.pathname === "/Project" ? styles.active : styles.LinkText}`}>
+                <Link href="/Project" className={`${router.pathname === "/Project" || router.pathname === "/CreateProject" ? styles.active : styles.LinkText}`}>
                     프로젝트
                 </Link>
             </div>

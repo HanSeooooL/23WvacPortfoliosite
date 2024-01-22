@@ -1,0 +1,40 @@
+.ButtonArea {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Button {
+    font-size: 0.8rem;
+    font-weight: 400;
+    width: 50px;
+}
+
+.MainArea {
+    padding-left: 5vw;
+    padding-top: 40px;
+}
+
+.title {
+    font-size: xx-large;
+    margin: 20px 0px;
+    border-width: 0 0 1px;
+    width: 70vw;
+}
+
+.description {
+    margin-top: 10px;
+    width: 60vw;
+    height: 20vw;
+}
+
+.githubLink {
+    width: 56vw;
+}
+
+.date {
+
+}
+
+.uploadfiles {
+    
+}
