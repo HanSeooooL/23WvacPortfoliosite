@@ -10,7 +10,7 @@ export default function Careers() {
             try {
                 const response = await axios({
                     method: 'get',
-                    url: `/DB/selectCareers`,
+                    url: `/DB/selectCareer`,
                     baseURL: 'http://localhost:3001/api',
                     timeout: 2000
                 });
@@ -37,10 +37,11 @@ export default function Careers() {
                 {career.map((list) => {
                     return (
                         <div key={list.ID} className={`${styles.datascreen}`}>
-                            <p>{list.title}</p>
-                            <p>{list.host}</p>
-                            <p>{list.awarded}</p>
+                            <p>{list.comp_name}</p>
+                            <p>{list.department}</p>
+                            <p>{list.responsibilities}</p>
                             <p>{list.start}</p>
+                            <p>{list.finish}</p>
                             <Link href="http://localhost:3000/CareerSelect" className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
