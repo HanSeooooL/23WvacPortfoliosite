@@ -41,7 +41,7 @@ export default function Projects() {
                             <p>{list.start}</p>
                             <p>{list.finish}</p>
                             <p>{list.link}</p>
-                            <Link href="http://localhost:3000/ProjectSelect" className={`${styles.Button}`}>
+                            <Link href={`http://localhost:3000/ProjectSelect?ID=${list.ID}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>
