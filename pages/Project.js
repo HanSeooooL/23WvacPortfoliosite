@@ -26,7 +26,7 @@ export default function Projects() {
             <div className={`${styles.mainscreen}`}>
                 <div className={`${styles.mainheader}`}>
                     <div>
-                        <p>op</p>
+                        <p>프로젝트</p>
                     </div>
                     <div>
                         <Link href="http://localhost:3000/CreateProject" className={`${styles.Button}`}>
@@ -38,9 +38,11 @@ export default function Projects() {
                     return (
                         <div key={list.ID} className={`${styles.datascreen}`}>
                             <p>{list.title}</p>
-                            <p>{list.start}</p>
-                            <p>{list.finish}</p>
-                            <p>{list.link}</p>
+                            <p>{list.start.substring(0, 10)}</p>
+                            <p>{list.finish.substring(0, 10)}</p>
+                            <Link href={`${list.link}`}>
+                                <button className="imgbutton"></button>
+                            </Link>
                             <Link href={`http://localhost:3000/ProjectSelect?ID=${list.ID}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>

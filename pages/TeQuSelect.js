@@ -3,9 +3,10 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
-export default function ProjectSelect() {
+export default function TeQuSelect() {
     const params = useSearchParams()
-    let ID = Number(params.get('ID'))
+    let name = params.get('NAME')
+    let host = params.get('HOST')
     
     
     const [data, setData] = useState({ID: 'error', title: 'error', descripton: 'error', start: 'error', finish: 'error', link: 'error'})
@@ -14,7 +15,7 @@ export default function ProjectSelect() {
             try {
                 const response = await axios({
                     method: 'get',
-                    url: `/DB/projectSelect?ID=${ID}`,
+                    url: `/DB/TeQuSelect?NAME=${name}&HOST=${host}`,
                     baseURL: 'http://localhost:3001/api',
                     timeout: 2000
                 });
@@ -28,27 +29,22 @@ export default function ProjectSelect() {
     return (
         <>
             <div className="ButtonArea">
-            <Link href="/Project">
+            <Link href="/Technical_Qualification">
                 <button className="Button"><span>Back</span></button>
             </Link>
             <div>
-                <Link href={`Projectupdate?ID=${ID}&title=${data[0]?.title}&description=${data[0]?.description}&start=${data[0]?.start.substring(0,10)}&finish=${data[0]?.finish.substring(0,10)}&link=${data[0]?.link}`}>
+                <Link href={`Projectupdate?title=$`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
-                <Link href={`http://localhost:3001/api/deleteProject?ID=${ID}`}>
+                <Link href={`http://localhost:3001/api/deleteTeQu?NAME=${data[0]?.NAME}&HOST=${data[0]?.HOST}`}>
                     <button className="Button"><span>삭제</span></button>
                 </Link>
             </div>
             </div>
             <div className="MainArea">
-                <p className="Title">{data[0]?.title}</p>
-                <p className="description">{data[0]?.description}</p>
-                <Link href={`${data[0]?.link}`}>
-                    <button className="imgbutton"></button>
-                </Link>
-                <div className="createdate">
-                    <p>제작기간<br/>{data[0]?.start.substring(0,10)} ~ {data[0]?.finish.substring(0, 10)}</p>
-                </div>
+                <p className="Title">{data[0]?.NAME}</p>
+                <p className="description">발급기관: {data[0]?.HOST}</p>
+                <p className="description">발급날짜: {data[0]?.acquisition_date.substring(0, 10)}</p>
                 
             </div>
             <style jsx> {`
@@ -76,8 +72,6 @@ export default function ProjectSelect() {
 
                 .description {
                     margin-top: 10px;
-                    width: 60vw;
-                    height: 20vw;
                 }
 
                 .createdate {

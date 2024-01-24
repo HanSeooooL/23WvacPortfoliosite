@@ -3,7 +3,7 @@ import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
 
-export default function ProjectSelect() {
+export default function CareerSelect() {
     const params = useSearchParams()
     let ID = Number(params.get('ID'))
     
@@ -14,7 +14,7 @@ export default function ProjectSelect() {
             try {
                 const response = await axios({
                     method: 'get',
-                    url: `/DB/projectSelect?ID=${ID}`,
+                    url: `/DB/careerSelect?ID=${ID}`,
                     baseURL: 'http://localhost:3001/api',
                     timeout: 2000
                 });
@@ -28,27 +28,23 @@ export default function ProjectSelect() {
     return (
         <>
             <div className="ButtonArea">
-            <Link href="/Project">
+            <Link href="/Careers">
                 <button className="Button"><span>Back</span></button>
             </Link>
             <div>
-                <Link href={`Projectupdate?ID=${ID}&title=${data[0]?.title}&description=${data[0]?.description}&start=${data[0]?.start.substring(0,10)}&finish=${data[0]?.finish.substring(0,10)}&link=${data[0]?.link}`}>
+                <Link href={`Careerupdate?ID=${ID}&title=${data[0]?.title}&description=${data[0]?.description}&start=${data[0]?.start.substring(0,10)}&finish=${data[0]?.finish.substring(0,10)}&link=${data[0]?.link}`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
-                <Link href={`http://localhost:3001/api/deleteProject?ID=${ID}`}>
+                <Link href={`http://localhost:3001/api/deleteCareer?ID=${ID}`}>
                     <button className="Button"><span>삭제</span></button>
                 </Link>
             </div>
             </div>
             <div className="MainArea">
-                <p className="Title">{data[0]?.title}</p>
-                <p className="description">{data[0]?.description}</p>
-                <Link href={`${data[0]?.link}`}>
-                    <button className="imgbutton"></button>
-                </Link>
-                <div className="createdate">
-                    <p>제작기간<br/>{data[0]?.start.substring(0,10)} ~ {data[0]?.finish.substring(0, 10)}</p>
-                </div>
+                <p className="Title">{data[0]?.comp_name}</p>
+                <p className="description">근무 부서: {data[0]?.department}</p>
+                <p className="description">담당 업무: {data[0]?.responsibilites}</p>
+                <p>근무기간: {data[0]?.start.substring(0,10)} ~ {data[0]?.finish.substring(0, 10)}</p>
                 
             </div>
             <style jsx> {`
@@ -76,8 +72,6 @@ export default function ProjectSelect() {
 
                 .description {
                     margin-top: 10px;
-                    width: 60vw;
-                    height: 20vw;
                 }
 
                 .createdate {

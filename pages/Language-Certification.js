@@ -26,7 +26,7 @@ export default function Language_Certification() {
             <div className={`${styles.mainscreen}`}>
                 <div className={`${styles.mainheader}`}>
                     <div>
-                        <p>op</p>
+                        <p>어학자격증</p>
                     </div>
                     <div>
                         <Link href="http://localhost:3000/CreateLaCe" className={`${styles.Button}`}>

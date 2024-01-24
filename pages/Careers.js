@@ -26,7 +26,7 @@ export default function Careers() {
             <div className={`${styles.mainscreen}`}>
                 <div className={`${styles.mainheader}`}>
                     <div>
-                        <p>op</p>
+                        <p>경력</p>
                     </div>
                     <div>
                         <Link href="http://localhost:3000/CreateCareer" className={`${styles.Button}`}>
@@ -40,9 +40,8 @@ export default function Careers() {
                             <p>{list.comp_name}</p>
                             <p>{list.department}</p>
                             <p>{list.responsibilities}</p>
-                            <p>{list.start}</p>
-                            <p>{list.finish}</p>
-                            <Link href="http://localhost:3000/CareerSelect" className={`${styles.Button}`}>
+                            <p>{list.start.substring(0, 10)}</p>
+                            <Link href={`http://localhost:3000/CareerSelect?ID=${list.ID}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>

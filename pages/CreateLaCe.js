@@ -13,7 +13,7 @@ export default function CreateLaCe() {
                 <button className={`${styles.Button}`} form="LaCeProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="LaCeProps" method="POST" action="https://localhost:3001/insertLaCe">
+                <form id="LaCeProps" method="POST" action="http://localhost:3001/api/insertLaCe" encType="multipart/form-data">
                     <input type="text" name="name" className={`${styles.title}`}/>
                     <p>
                         점수: <input type="text" name="score" className="Score" />
@@ -25,7 +25,7 @@ export default function CreateLaCe() {
                         시험일자: <input type="date" name="acquisition_date" className="Acda" />
                     </p>
                     <p>
-                        자격증명서 <input type="file" name="certificate" />
+                        자격증명서 <input type="file" name="myFiles" />
                     </p>
                 </form>
             </div>

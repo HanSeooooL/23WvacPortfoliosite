@@ -12,7 +12,7 @@ export default function CreateCareer() {
                 <button className={`${styles.Button}`} form="CareerProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="CareerProps" method="POST" action="http://localhost:3001/insertCareer">
+                <form id="CareerProps" method="POST" action="http://localhost:3001/api/insertCareer" encType="multipart/form-data">
                     <input type="text" name="comp_name" className={`${styles.title}`}/>
                     <p>
                         근무부서: <input type="text" name="department" className="Department"/>
@@ -24,7 +24,7 @@ export default function CreateCareer() {
                         근무기간 <input type="date" name="start" /> ~ <input type="date" name="finish" />
                     </p>
                     <p>
-                        재직증명서 <input type="file" name="certificate" />
+                        재직증명서 <input type="file" name="myFiles" />
                     </p>
                 </form>
             </div>

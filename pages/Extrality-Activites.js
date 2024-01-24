@@ -26,7 +26,7 @@ export default function Extrality_Activites() {
             <div className={`${styles.mainscreen}`}>
                 <div className={`${styles.mainheader}`}>
                     <div>
-                        <p>op</p>
+                        <p>대내외활동</p>
                     </div>
                     <div>
                         <Link href="http://localhost:3000/CreateEx_Ac" className={`${styles.Button}`}>
@@ -40,8 +40,8 @@ export default function Extrality_Activites() {
                             <p>{list.title}</p>
                             <p>{list.host}</p>
                             <p>{list.awarded}</p>
-                            <p>{list.start}</p>
-                            <Link href="http://localhost:3000/ProjectSelect" className={`${styles.Button}`}>
+                            <p>{list.start.substring(0, 10)}</p>
+                            <Link href="http://localhost:3000/Ex_AcSelect" className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>

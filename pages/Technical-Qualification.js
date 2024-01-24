@@ -26,7 +26,7 @@ export default function Technical_Qualification() {
             <div className={`${styles.mainscreen}`}>
                 <div className={`${styles.mainheader}`}>
                     <div>
-                        <p>op</p>
+                        <p>기술 자격증</p>
                     </div>
                     <div>
                         <Link href="http://localhost:3000/CreateTeQu" className={`${styles.Button}`}>
@@ -39,8 +39,8 @@ export default function Technical_Qualification() {
                         <div key={list.ID} className={`${styles.datascreen}`}>
                             <p>{list.NAME}</p>
                             <p>{list.HOST}</p>
-                            <p>{list.acquisition_date}</p>
-                            <Link href="http://localhost:3000/TeQuSelect" className={`${styles.Button}`}>
+                            <p>{list.acquisition_date.substring(0, 10)}</p>
+                            <Link href={`http://localhost:3000/TeQuSelect?NAME=${list.NAME}&HOST=${list.HOST}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>

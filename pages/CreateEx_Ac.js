@@ -13,7 +13,7 @@ export default function CreateEx_Ac() {
                 <button className={`${styles.Button}`} form="Ex_AcProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="Ex_AcProps" method="POST" action="https://localhost:3001/insertEx_Ac">
+                <form id="Ex_AcProps" method="POST" action="http://localhost:3001/api/insertEx_Ac" encType="multipart/form-data">
                     
                     <input type="text" name="title" className={`${styles.title}`}/>
                     <p>

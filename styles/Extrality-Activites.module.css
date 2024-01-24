@@ -9,6 +9,7 @@
     grid-template-columns: 1fr 1fr 1fr 0.5fr 100px;
     padding-left: 20px;
     padding-top: 10px;
+    font-size: 1rem;
 }
 
 .mainheader {

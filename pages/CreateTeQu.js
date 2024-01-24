@@ -13,7 +13,7 @@ export default function CreateTeQu() {
                 <button className={`${styles.Button}`} form="TeQuProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="TeQuProps" method="POST" action="https://localhost:3001/insertTeQu">
+                <form id="TeQuProps" method="POST" action="http://localhost:3001/api/insertTeQu" encType="multipart/form-data">
                     <input type="text" name="name" className={`${styles.title}`}/>
                     <p>
                         테스트 주관기관: <input type="text" name="host" className="Host" />
@@ -22,7 +22,7 @@ export default function CreateTeQu() {
                         취득일자: <input type="date" name="acquisition_date" className="Acda" />
                     </p>
                     <p>
-                        자격증명서: <input type="file" name="certificate" />
+                        자격증명서: <input type="file" name="myFiles" />
                     </p>
                 </form>
             </div>
