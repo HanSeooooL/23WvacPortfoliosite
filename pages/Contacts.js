@@ -26,7 +26,7 @@ export default function Contact() {
             <div className={`${styles.mainscreen}`}>
                 <div className={`${styles.mainheader}`}>
                     <div>
-                        <p>op</p>
+                        <p>연락처</p>
                     </div>
                     <div>
                         <Link href="http://localhost:3000/CreateContact" className={`${styles.Button}`}>

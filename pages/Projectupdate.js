@@ -34,20 +34,21 @@ export default function Projectupdate() {
         <div className={`${styles.MainArea}`}>
             <form id="ProjectProps" action="http://localhost:3001/api/updateProject" method="POST" encType="multipart/form-data">
                 <p>
-                    <input type="text" name="Title" className={`${styles.title}`} value={`${params.get('title')}`}/>
+                    <input type="text" name="Title" className={`${styles.title}`} defaultValue={`${params.get('title')}`}/>
                 </p>
                 <p>
                     설명<br/>
-                    <textarea name="Description" className={`${styles.description}`} value={`${params.get('description')}`} />
+                    <textarea name="Description" className={`${styles.description}`} defaultValue={`${params.get('description')}`} />
                 </p>
                 <p>
-                    GitHub: <input type="text" name="github" className={`${styles.githubLink}`} value={`${params.get('link')}`} />
+                    GitHub: <input type="text" name="github" className={`${styles.githubLink}`} defaultValue={`${params.get('link')}`} />
                 </p>
-                    제작 기간: <input type="date" name="date" value={`${params.get('start')}`} /> ~ <input type="date" name="date" value={`${params.get('finish')}`}/>
+                    제작 기간: <input type="date" name="date" defaultValue={`${params.get('start')}`} /> ~ <input type="date" name="date" defaultValue={`${params.get('finish')}`}/>
                 <div className={`${styles.uploadfiles}`}>
                     첨부파일 <br />
                     <input type="file" name="myFiles" multiple/>
                 </div>
+                <input type="text" name="ID" value={`${ID}`} className={`${styles.ID}`} />
             </form>
         </div>
         </>
