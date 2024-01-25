@@ -1,4 +1,5 @@
 import axios from "axios"
+import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
@@ -9,7 +10,7 @@ export default function TeQuSelect() {
     let host = params.get('HOST')
     
     
-    const [data, setData] = useState({ID: 'error', title: 'error', descripton: 'error', start: 'error', finish: 'error', link: 'error'})
+    const [data, setData] = useState({ID: 'error', title: 'error', descripton: 'error', start: 'error', finish: 'error', link: 'error', certificate: 'error'})
     useEffect(() => {
         (async() => {
             try {
@@ -29,7 +30,7 @@ export default function TeQuSelect() {
     return (
         <>
             <div className="ButtonArea">
-            <Link href="/Technical_Qualification">
+            <Link href="/Technical-Qualification">
                 <button className="Button"><span>Back</span></button>
             </Link>
             <div>
@@ -45,6 +46,7 @@ export default function TeQuSelect() {
                 <p className="Title">{data[0]?.NAME}</p>
                 <p className="description">발급기관: {data[0]?.HOST}</p>
                 <p className="description">발급날짜: {data[0]?.acquisition_date.substring(0, 10)}</p>
+                <Image src={`http://localhost:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
                 
             </div>
             <style jsx> {`

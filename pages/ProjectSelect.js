@@ -8,7 +8,7 @@ export default function ProjectSelect() {
     let ID = Number(params.get('ID'))
     
     
-    const [data, setData] = useState({ID: 'error', title: 'error', descripton: 'error', start: 'error', finish: 'error', link: 'error'})
+    const [data, setData] = useState([{ID: 'error', title: 'error', description: 'error', start: 'error', finish: 'error', link: 'error'}])
     useEffect(() => {
         (async() => {
             try {
@@ -48,6 +48,20 @@ export default function ProjectSelect() {
                 </Link>
                 <div className="createdate">
                     <p>제작기간<br/>{data[0]?.start.substring(0,10)} ~ {data[0]?.finish.substring(0, 10)}</p>
+                </div>
+                <div>
+                    첨부파일<br/>
+                    {
+                        data.map((list) => {
+                            return (
+                                <div key={list.file}>
+                                    <p>
+                                        {list.origianl_name}   <Link href={`http://localhost:3001/api/File?file=${list.file}`}><button>다운로드</button></Link>
+                                    </p>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
                 
             </div>

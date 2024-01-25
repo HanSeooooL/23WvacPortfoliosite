@@ -1,4 +1,5 @@
 import axios from "axios"
+import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useEffect, useState } from "react"
@@ -43,9 +44,9 @@ export default function CareerSelect() {
             <div className="MainArea">
                 <p className="Title">{data[0]?.comp_name}</p>
                 <p className="description">근무 부서: {data[0]?.department}</p>
-                <p className="description">담당 업무: {data[0]?.responsibilites}</p>
+                <p className="description">담당 업무: {data[0]?.responsibilities}</p>
                 <p>근무기간: {data[0]?.start.substring(0,10)} ~ {data[0]?.finish.substring(0, 10)}</p>
-                
+                <Image src={`http://localhost:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
             </div>
             <style jsx> {`
                 .ButtonArea {

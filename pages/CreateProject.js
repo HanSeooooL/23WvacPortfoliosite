@@ -15,7 +15,7 @@ export default function CreateProject() {
         <div className={`${styles.MainArea}`}>
             <form id="ProjectProps" action="http://localhost:3001/api/insertProject" method="POST" encType="multipart/form-data">
                 <p>
-                    <input type="text" name="Title" className={`${styles.title}`} />
+                    <input type="text" name="Title" className={`${styles.title}`} defaultValue="제목을 입력하세요"/>
                 </p>
                 <p>
                     설명<br/>
@@ -28,6 +28,7 @@ export default function CreateProject() {
                 <div className={`${styles.uploadfiles}`}>
                     첨부파일 <br />
                     <input type="file" name="myFiles" multiple/>
+                    
                 </div>
             </form>
         </div>
