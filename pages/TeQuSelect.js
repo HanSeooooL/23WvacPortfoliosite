@@ -26,7 +26,7 @@ export default function TeQuSelect() {
                 console.error(e);            
             }
         })();
-    })
+    }, [])
     return (
         <>
             <div className="ButtonArea">

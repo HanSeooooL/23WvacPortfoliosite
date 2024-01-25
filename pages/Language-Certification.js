@@ -40,8 +40,8 @@ export default function Language_Certification() {
                             <p>{list.name}</p>
                             <p>{list.score}</p>
                             <p>{list.host}</p>
-                            <p>{list.acquisition_date}</p>
-                            <Link href="http://localhost:3000/LaCeSelect" className={`${styles.Button}`}>
+                            <p>{list.acquisition_date.substring(0, 10)}</p>
+                            <Link href={`http://localhost:3000/LaCeSelect?ID=${list.ID}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>

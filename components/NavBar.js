@@ -8,7 +8,7 @@ export default function NavBar() {
     return (
         <>
             <div className={`${styles.NavHeader}`}>
-                <Link href="/" className={`${styles.NavHeaderText}`}>
+                <Link href="/Project" className={`${styles.NavHeaderText}`}>
                     Portfolio
                 </Link>
             </div>

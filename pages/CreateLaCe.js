@@ -32,7 +32,7 @@ export default function CreateLaCe() {
             <style jsx>
                 {`
                     .Score{
-
+                        
                     }
 
                     .Host {

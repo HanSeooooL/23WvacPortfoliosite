@@ -28,9 +28,7 @@ export default function CreateEx_Ac() {
                     <p>
                         대회 사이트: <input type="text" name="link" className= {`${styles.link}`} />
                     </p>
-                    <p>
-                        연관프로젝트
-                    </p>
+                    
                 </form>
             </div>
         </>
