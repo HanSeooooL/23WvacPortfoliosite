@@ -27,3 +27,8 @@
     font-weight: 400;
     width: 50px;
 }
+
+.ButtonArea {
+    display: flex;
+    justify-content: space-between;
+}
