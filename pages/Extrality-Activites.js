@@ -41,7 +41,7 @@ export default function Extrality_Activites() {
                             <p>{list.host}</p>
                             <p>{list.awarded}</p>
                             <p>{list.start.substring(0, 10)}</p>
-                            <Link href="http://localhost:3000/Ex_AcSelect" className={`${styles.Button}`}>
+                            <Link href={`http://localhost:3000/Ex_AcSelect?ID=${list.ID}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>
