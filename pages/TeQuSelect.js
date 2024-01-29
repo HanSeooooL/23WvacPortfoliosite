@@ -34,10 +34,10 @@ export default function TeQuSelect() {
                 <button className="Button"><span>Back</span></button>
             </Link>
             <div>
-                <Link href={`Projectupdate?title=$`}>
+                <Link href={`TeQuupdate?NAME=${name}&HOST=${host}&acquisition_date=${data[0]?.acquisition_date.substring(0, 10)}`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
-                <Link href={`http://localhost:3001/api/deleteTeQu?NAME=${data[0]?.NAME}&HOST=${data[0]?.HOST}`}>
+                <Link href={`http://localhost:3001/api/deleteTeQu?NAME=${name}&HOST=${host}`}>
                     <button className="Button"><span>삭제</span></button>
                 </Link>
             </div>

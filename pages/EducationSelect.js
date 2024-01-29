@@ -1,3 +1,4 @@
+import { displaydegree, displaystate } from "@/components/Scripts/etcscripts"
 import axios from "axios"
 import Image from "next/image"
 import Link from "next/link"
@@ -35,7 +36,7 @@ export default function EducationSelect() {
                 <button className="Button"><span>Back</span></button>
             </Link>
             <div>
-                <Link href={`Projectupdate?title=$`}>
+                <Link href={`Educationupdate?name=${data[0]?.name}&degree=${data[0]?.degree}`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
                 <Link href={`http://localhost:3001/api/deleteEducation?ID=${ID}`}>
@@ -45,6 +46,12 @@ export default function EducationSelect() {
             </div>
             <div className="MainArea">
                 <p className="Title">{data[0]?.name}</p>
+                <p className="description">학위구분 : {displaydegree(data[0]?.degree)}</p>
+                <p className="description">전공: {data[0]?.major}</p>
+                <p className="description">수학구분: {displaystate(data[0]?.state)}</p>
+                <p className="description">입학일자: {data[0]?.admission_date.substring(0, 10)}</p>
+                <p className="description">졸업(예정)일자: {data[0]?.graduate_date.substring(0, 10)}</p>
+                <Image src={`http://localhost:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
             </div>
             <style jsx> {`
                 .ButtonArea {

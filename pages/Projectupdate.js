@@ -32,7 +32,7 @@ export default function Projectupdate() {
             <button className={`${styles.Button}`} form="ProjectProps" type="submit"><span>수정</span></button>
         </div>
         <div className={`${styles.MainArea}`}>
-            <form id="ProjectProps" action="http://localhost:3001/api/updateProject" method="POST" encType="multipart/form-data">
+            <form id="ProjectProps" action="http://localhost:3001/api/updateProject" method="POST">
                 <p>
                     <input type="text" name="Title" className={`${styles.title}`} defaultValue={`${params.get('title')}`}/>
                 </p>
@@ -45,8 +45,6 @@ export default function Projectupdate() {
                 </p>
                     제작 기간: <input type="date" name="date" defaultValue={`${params.get('start')}`} /> ~ <input type="date" name="date" defaultValue={`${params.get('finish')}`}/>
                 <div className={`${styles.uploadfiles}`}>
-                    첨부파일 <br />
-                    <input type="file" name="myFiles" multiple/>
                 </div>
                 <input type="text" name="ID" value={`${ID}`} className={`${styles.ID}`} />
             </form>

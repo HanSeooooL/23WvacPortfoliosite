@@ -7,7 +7,6 @@ export default function ProjectSelect() {
     const params = useSearchParams()
     let ID = Number(params.get('ID'))
     
-    
     const [data, setData] = useState([{ID: 'error', title: 'error', description: 'error', start: 'error', finish: 'error', link: 'error'}])
     useEffect(() => {
         (async() => {
@@ -24,7 +23,7 @@ export default function ProjectSelect() {
                 console.error(e);            
             }
         })();
-    })
+    }, [])
     return (
         <>
             <div className="ButtonArea">
