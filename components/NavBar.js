@@ -40,6 +40,10 @@ export default function NavBar() {
                 <Image src="/Phone_icon.png" width={20} height={20}/>
                 <Link href="/Contacts" className={`${router.pathname === "/Contacts" ? styles.active : styles.LinkText}`}> 연락처</Link>
             </div>
+            <div className={`${styles.LinkStyle}`}>
+                <Image src="/resume_icon.png" width={20} height={20} />
+                <Link href={`/selectResume`} className={`${router.pathname === "/selectResume" ? styles.active : styles.LinkText}`}> 이력서 생성</Link>
+            </div>
         </>
     )
 }
