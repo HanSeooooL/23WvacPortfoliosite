@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "@/styles/Extrality-Activites.module.css"
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { setCookie, getCookie } from "@/components/Scripts/cookiehandle";
 
 export default function Ex_AcSelect() {
     const params = useSearchParams()
@@ -33,8 +34,18 @@ export default function Ex_AcSelect() {
                 <button className="Button"><span>Back</span></button>
             </Link>
             <div>
-                <Link href={`Projectupdate?title=$`}>
-                    <button className="Button"><span>수정</span></button>
+                <Link href={`Ex_Acupdate`}>
+                    <button className="Button" onClick={() => {
+                        setCookie('title' ,document.getElementById("title").value, 5)
+                        setCookie('host', document.getElementById("host").value, 5)
+                        setCookie('awarded', document.getElementById("awarded").value, 5)
+                        setCookie('start', document.getElementById("start").value, 5)
+                        setCookie('finish', document.getElementById("finish").value, 5)
+                        for(let i = 0; i < data.length; i++) {
+                            relpro.push(String(data[i].Pro_ID))
+                        }
+                        setCookie('RelProj', relpro, 5)
+                    }}><span>수정</span></button>
                 </Link>
                 <Link href={`http://localhost:3001/api/deleteEx_Ac?ID=${ID}`}>
                     <button className="Button"><span>삭제</span></button>
@@ -46,6 +57,11 @@ export default function Ex_AcSelect() {
                 <p className="description">주관기관: {data[0]?.host}</p>
                 <p className="description">수상여부: {data[0]?.awarded}</p>
                 <p className="description">수행기간: {data[0]?.start.substring(0, 10)} ~ {data[0]?.finish.substring(0, 10)}</p>
+                <input type="hidden" id="title" Value={data[0]?.title} />
+                <input type="hidden" id="host" Value={data[0]?.host} />
+                <input type="hidden" id="awarded" Value={data[0]?.awarded} />
+                <input type="hidden" id="start" Value={data[0]?.start.substring(0, 10)} />
+                <input type="hidden" id="finish" Value={data[0]?.finish.substring(0, 10)} />
                 <div>
                     <p>연관 프로젝트</p>
                     {data.map((list) => {

@@ -33,7 +33,7 @@ export default function LaCeSelect() {
                 <button className="Button"><span>Back</span></button>
             </Link>
             <div>
-                <Link href={`Projectupdate?title=$`}>
+                <Link href={`LaCeupdate?ID=${ID}`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
                 <Link href={`http://localhost:3001/api/deleteLaCe?ID=${ID}`}>

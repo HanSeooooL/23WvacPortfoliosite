@@ -17,18 +17,18 @@ export default function CreateEducation() {
                     <input type="text" name="name" className={`${styles.title}`} defaultValue={`대학명을 입력하세요...`}/>
                     <p>
                         학위구분: <select name="degree">
-                            <option value="0">학사</option>
-                            <option value="1">석사</option>
-                            <option value="2">박사</option>
+                            <option value="1">학사</option>
+                            <option value="2">석사</option>
+                            <option value="3">박사</option>
                         </select>
                     </p>
                     <p> 전공: <input type="text" name="major" className={`${styles.awarded}`}/></p>
                     <p>
                         수학구분: <select name="state">
-                            <option value="0">졸업</option>
-                            <option value="1">수료</option>
-                            <option value="2">재학</option>
-                            <option value="3">중퇴</option>
+                            <option value="1">졸업</option>
+                            <option value="2">수료</option>
+                            <option value="3">재학</option>
+                            <option value="4">중퇴</option>
                         </select>
                     </p>
                     <p>입학일자: <input type="date" name="admis_date" defaultValue={getTodayFormInputDate()}/></p>

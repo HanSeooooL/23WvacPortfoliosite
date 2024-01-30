@@ -36,7 +36,7 @@ export default function EducationSelect() {
                 <button className="Button"><span>Back</span></button>
             </Link>
             <div>
-                <Link href={`Educationupdate?name=${data[0]?.name}&degree=${data[0]?.degree}`}>
+                <Link href={`Educationupdate?ID=${ID}`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
                 <Link href={`http://localhost:3001/api/deleteEducation?ID=${ID}`}>

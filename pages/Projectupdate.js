@@ -6,7 +6,7 @@ import styles from "@/styles/createproject.module.css"
 export default function Projectupdate() {
     const params = useSearchParams()
     let ID = Number(params.get('ID'))
-    const [data, setData] = useState({ID: 'error', title: 'error', descripton: 'error', start: 'error', finish: 'error', link: 'error'})
+    const [data, setData] = useState([{ID: 'error', title: 'error', descripton: 'error', start: 'error', finish: 'error', link: 'error'}])
     useEffect(() => {
         (async() => {
             try {
