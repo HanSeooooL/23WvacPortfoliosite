@@ -11,7 +11,7 @@ export default function Projects() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/selectProject`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -29,7 +29,7 @@ export default function Projects() {
                         <p>프로젝트</p>
                     </div>
                     <div>
-                        <Link href="http://localhost:3000/CreateProject" className={`${styles.Button}`}>
+                        <Link href="http://3.39.99.94:3000/CreateProject" className={`${styles.Button}`}>
                             <button>+</button>
                         </Link>
                     </div>
@@ -40,10 +40,10 @@ export default function Projects() {
                             <p>{list.title}</p>
                             <p>{list.start.substring(0, 10)}</p>
                             <p>{list.finish.substring(0, 10)}</p>
-                            <Link href={`${list.link}`}>
+                            <Link href={`${list.link}`} target="_blank">
                                 <button className="imgbutton"></button>
                             </Link>
-                            <Link href={`http://localhost:3000/ProjectSelect?ID=${list.ID}`} className={`${styles.Button}`}>
+                            <Link href={`http://3.39.99.94:3000/ProjectSelect?ID=${list.ID}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>

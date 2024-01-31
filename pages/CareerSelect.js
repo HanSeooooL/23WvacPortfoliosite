@@ -16,7 +16,7 @@ export default function CareerSelect() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/careerSelect?ID=${ID}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -36,7 +36,7 @@ export default function CareerSelect() {
                 <Link href={`Careerupdate?ID=${ID}&title=${data[0]?.title}&description=${data[0]?.description}&start=${data[0]?.start.substring(0,10)}&finish=${data[0]?.finish.substring(0,10)}&link=${data[0]?.link}`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
-                <Link href={`http://localhost:3001/api/deleteCareer?ID=${ID}`}>
+                <Link href={`http://3.39.99.94:3001/api/deleteCareer?ID=${ID}`}>
                     <button className="Button"><span>삭제</span></button>
                 </Link>
             </div>
@@ -46,7 +46,7 @@ export default function CareerSelect() {
                 <p className="description">근무 부서: {data[0]?.department}</p>
                 <p className="description">담당 업무: {data[0]?.responsibilities}</p>
                 <p>근무기간: {data[0]?.start.substring(0,10)} ~ {data[0]?.finish.substring(0, 10)}</p>
-                <Image src={`http://localhost:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
+                <Image src={`http://3.39.99.94:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
             </div>
             <style jsx> {`
                 .ButtonArea {

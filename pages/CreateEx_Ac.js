@@ -41,7 +41,7 @@ export default function CreateEx_Ac() {
                 }><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="Ex_AcProps" method="POST" action="http://localhost:3001/api/insertEx_Ac">
+                <form id="Ex_AcProps" method="POST" action="http://3.39.99.94:3001/api/insertEx_Ac">
                     
                     <input type="text" name="title" id="title" className={`${styles.title}`}/>
                     <p>

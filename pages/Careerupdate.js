@@ -15,7 +15,7 @@ export default function Careerupdate() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/CareerSelect?ID=${router.query.ID}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -34,7 +34,7 @@ export default function Careerupdate() {
                 <button className={`${styles.Button}`} form="CareerProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-            <form id="CareerProps" method="POST" action="http://localhost:3001/api/updateCareer">
+            <form id="CareerProps" method="POST" action="http://3.39.99.94:3001/api/updateCareer">
                     <input type="text" name="comp_name" className={`${styles.title}`} defaultValue={`${data[0]?.comp_name}`}/>
                     <p>
                         근무부서: <input type="text" name="department" className="Department" defaultValue={`${data[0]?.department}`}/>

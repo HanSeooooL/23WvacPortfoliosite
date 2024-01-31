@@ -16,7 +16,7 @@ export default function CreateContact() {
                 <button className={`${styles.Button}`} form="ContactProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="ContactProps" action="http://localhost:3001/api/insertContact" method="POST">
+                <form id="ContactProps" action="http://3.39.99.94:3001/api/insertContact" method="POST">
                     <p>
                         유형: <select name="category">
                             <option value="instagram">Instagram</option>

@@ -11,7 +11,7 @@ export default function ManageContact() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/selectContact`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -33,7 +33,7 @@ export default function ManageContact() {
                         <button className={`${styles.Button}`} style={{width: 60}} form="checkedContact" type="submit">삭제</button>
                     </div>
                 </div>
-                <form id="checkedContact" method="POST" action="http://localhost:3001/api/deleteContact">
+                <form id="checkedContact" method="POST" action="http://3.39.99.94:3001/api/deleteContact">
                 {data.map((list) => {
                     return (
                         <div key={list.ID} className={`${styles.datascreen}`}>

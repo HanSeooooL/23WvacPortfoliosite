@@ -42,7 +42,7 @@ export default function NavBar() {
             </div>
             <div className={`${styles.LinkStyle}`}>
                 <Image src="/resume_icon.png" width={20} height={20} />
-                <Link href={`http://localhost:3010`} className={`${router.pathname === "/selectResume" ? styles.active : styles.LinkText}`} target="_blank"> 이력서 생성</Link>
+                <Link href={`http://3.39.99.94:3010`} className={`${router.pathname === "/selectResume" ? styles.active : styles.LinkText}`} target="_blank"> 이력서 생성</Link>
             </div>
         </>
     )

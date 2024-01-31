@@ -11,7 +11,7 @@ export default function Language_Certification() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/selectLaCe`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -29,7 +29,7 @@ export default function Language_Certification() {
                         <p>어학자격증</p>
                     </div>
                     <div>
-                        <Link href="http://localhost:3000/CreateLaCe" className={`${styles.Button}`}>
+                        <Link href="http://3.39.99.94:3000/CreateLaCe" className={`${styles.Button}`}>
                             <button>+</button>
                         </Link>
                     </div>
@@ -41,7 +41,7 @@ export default function Language_Certification() {
                             <p>{list.score}</p>
                             <p>{list.host}</p>
                             <p>{list.acquisition_date.substring(0, 10)}</p>
-                            <Link href={`http://localhost:3000/LaCeSelect?ID=${list.ID}`} className={`${styles.Button}`}>
+                            <Link href={`http://3.39.99.94:3000/LaCeSelect?ID=${list.ID}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>

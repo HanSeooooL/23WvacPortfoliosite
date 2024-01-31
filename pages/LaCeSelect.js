@@ -15,7 +15,7 @@ export default function LaCeSelect() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/LaCeSelect?ID=${ID}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -36,7 +36,7 @@ export default function LaCeSelect() {
                 <Link href={`LaCeupdate?ID=${ID}`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
-                <Link href={`http://localhost:3001/api/deleteLaCe?ID=${ID}`}>
+                <Link href={`http://3.39.99.94:3001/api/deleteLaCe?ID=${ID}`}>
                     <button className="Button"><span>삭제</span></button>
                 </Link>
             </div>
@@ -46,7 +46,7 @@ export default function LaCeSelect() {
                 <p className="description">점수: {data[0]?.score}</p>
                 <p className="description">발급기관: {data[0]?.host}</p>
                 <p className="description">시험일자: {data[0]?.acquisition_date.substring(0, 10)}</p>
-                <Image src={`http://localhost:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
+                <Image src={`http://3.39.99.94:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
             </div>
             <style jsx> {`
                 .ButtonArea {

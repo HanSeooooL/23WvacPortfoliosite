@@ -15,7 +15,7 @@ export default function Educationupdate() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/EducationSelect?ID=${router.query.ID}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -34,7 +34,7 @@ export default function Educationupdate() {
                 <button className={`${styles.Button}`} form="EducationProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="EducationProps" method="POST" action="http://localhost:3001/api/updateEducation">
+                <form id="EducationProps" method="POST" action="http://3.39.99.94:3001/api/updateEducation">
                     <input type="text" name="name" className={`${styles.title}`} id="name" defaultValue={`${data[0]?.name}`}/>
                     <p>
                         학위구분: <select name="degree" defaultValue={`${data[0]?.degree}`}>

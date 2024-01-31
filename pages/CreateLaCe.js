@@ -14,7 +14,7 @@ export default function CreateLaCe() {
                 <button className={`${styles.Button}`} form="LaCeProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="LaCeProps" method="POST" action="http://localhost:3001/api/insertLaCe" encType="multipart/form-data">
+                <form id="LaCeProps" method="POST" action="http://3.39.99.94:3001/api/insertLaCe" encType="multipart/form-data">
                     <input type="text" name="name" className={`${styles.title}`}/>
                     <p>
                         점수: <input type="text" name="score" className="Score" />

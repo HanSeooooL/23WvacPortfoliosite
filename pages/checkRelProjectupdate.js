@@ -11,7 +11,7 @@ export default function CheckRelProjectupdate() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/selectProject`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -35,7 +35,7 @@ export default function CheckRelProjectupdate() {
                         <p>연관 프로젝트 선택</p>
                     </div>
                 </div>
-                <form id="RelProjectssel" method="GET" action="http://localhost:3000/Ex_Acupdate">
+                <form id="RelProjectssel" method="GET" action="http://3.39.99.94:3000/Ex_Acupdate">
                 {project.map((list) => {
                     return (
                         <div key={list.ID} className={`${styles.datascreen}`}>

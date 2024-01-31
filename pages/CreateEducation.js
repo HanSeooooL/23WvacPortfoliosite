@@ -13,7 +13,7 @@ export default function CreateEducation() {
                 <button className={`${styles.Button}`} form="EducationProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="EducationProps" action="http://localhost:3001/api/insertEducation" method="POST" encType="multipart/form-data">
+                <form id="EducationProps" action="http://3.39.99.94:3001/api/insertEducation" method="POST" encType="multipart/form-data">
                     <input type="text" name="name" className={`${styles.title}`} defaultValue={`대학명을 입력하세요...`}/>
                     <p>
                         학위구분: <select name="degree">
@@ -33,7 +33,7 @@ export default function CreateEducation() {
                     </p>
                     <p>입학일자: <input type="date" name="admis_date" defaultValue={getTodayFormInputDate()}/></p>
                     <p>졸업(예정)일자: <input type="date" name="grad_date" defaultValue={getTodayFormInputDate()}/></p>
-                    <p>학적증명서 <input type="file" name="myFiles" /></p>
+                    <p>제적증명서 <input type="file" name="myFiles" /></p>
                 </form>
             </div>
             <script>

@@ -16,7 +16,7 @@ export default function Ex_AcSelect() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/Ex_AcSelect?ID=${ID}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 })
                 console.log(response.data)
@@ -49,7 +49,7 @@ export default function Ex_AcSelect() {
                         setCookie('RelProj', relpro, 5)
                     }}><span>수정</span></button>
                 </Link>
-                <Link href={`http://localhost:3001/api/deleteEx_Ac?ID=${ID}`}>
+                <Link href={`http://3.39.99.94:3001/api/deleteEx_Ac?ID=${ID}`}>
                     <button className="Button"><span>삭제</span></button>
                 </Link>
             </div>
@@ -70,7 +70,7 @@ export default function Ex_AcSelect() {
                         return (
                             <div key={list.Pro_ID} className={`${styles.datascreen}`}>
                                 {list.Pro_title}
-                                <Link href={`http://localhost:3000/ProjectSelect?ID=${list.Pro_ID}`} className={`${styles.Button}`}>
+                                <Link href={`http://3.39.99.94:3000/ProjectSelect?ID=${list.Pro_ID}`} className={`${styles.Button}`}>
                                     <button>✓</button>
                                 </Link>
                             </div>

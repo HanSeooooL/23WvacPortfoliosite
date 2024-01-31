@@ -11,7 +11,7 @@ export default function Contact() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/selectContact`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -29,10 +29,10 @@ export default function Contact() {
                         <p>연락처</p>
                     </div>
                     <div>
-                        <Link href="http://localhost:3000/CreateContact" className={`${styles.Button}`}>
+                        <Link href="http://3.39.99.94:3000/CreateContact" className={`${styles.Button}`}>
                             <button>+</button>
                         </Link>
-                        <Link href="http://localhost:3000/ManageContact" className={`${styles.Button}`}>
+                        <Link href="http://3.39.99.94:3000/ManageContact" className={`${styles.Button}`}>
                             <button>관리</button>
                         </Link>
                     </div>
@@ -42,7 +42,7 @@ export default function Contact() {
                         <div key={list.ID} className={`${styles.datascreen}`}>
                             <p>{list.category}</p>
                             <p>{list.detail}</p>
-                            <Link href="http://localhost:3000/ContactSelect" className={`${styles.Button}`}>
+                            <Link href="http://3.39.99.94:3000/ContactSelect" className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>

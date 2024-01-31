@@ -14,7 +14,7 @@ export default function CreateTeQu() {
                 <button className={`${styles.Button}`} form="TeQuProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="TeQuProps" method="POST" action="http://localhost:3001/api/insertTeQu" encType="multipart/form-data">
+                <form id="TeQuProps" method="POST" action="http://3.39.99.94:3001/api/insertTeQu" encType="multipart/form-data">
                     <input type="text" name="name" className={`${styles.title}`}/>
                     <p>
                         테스트 주관기관: <input type="text" name="host" className="Host" />

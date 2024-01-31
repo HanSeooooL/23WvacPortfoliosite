@@ -11,7 +11,7 @@ export default function Extrality_Activites() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/selectEx_Ac`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -29,7 +29,7 @@ export default function Extrality_Activites() {
                         <p>대내외활동</p>
                     </div>
                     <div>
-                        <Link href="http://localhost:3000/CreateEx_Ac" className={`${styles.Button}`}>
+                        <Link href="http://3.39.99.94:3000/CreateEx_Ac" className={`${styles.Button}`}>
                             <button>+</button>
                         </Link>
                     </div>
@@ -41,7 +41,7 @@ export default function Extrality_Activites() {
                             <p>{list.host}</p>
                             <p>{list.awarded}</p>
                             <p>{list.start.substring(0, 10)}</p>
-                            <Link href={`http://localhost:3000/Ex_AcSelect?ID=${list.ID}`} className={`${styles.Button}`}>
+                            <Link href={`http://3.39.99.94:3000/Ex_AcSelect?ID=${list.ID}`} className={`${styles.Button}`}>
                                 <button>✓</button>
                             </Link>
                         </div>

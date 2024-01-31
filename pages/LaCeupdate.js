@@ -16,7 +16,7 @@ export default function LaCeupdate() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/LaCeSelect?ID=${router.query.ID}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -35,7 +35,7 @@ export default function LaCeupdate() {
                 <button className={`${styles.Button}`} form="LaCeProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="LaCeProps" method="POST" action="http://localhost:3001/api/updateLaCe">
+                <form id="LaCeProps" method="POST" action="http://3.39.99.94:3001/api/updateLaCe">
                     <input type="text" name="name" className={`${styles.title}`} id="name" defaultValue={`${data[0]?.name}`}/>
                     <p>
                         테스트 주관기관: <input type="text" name="host" className="Host" defaultValue={`${data[0]?.host}`}/>

@@ -18,7 +18,7 @@ export default function EducationSelect() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/EducationSelect?ID=${ID}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 })
                 console.log(response.data)
@@ -39,7 +39,7 @@ export default function EducationSelect() {
                 <Link href={`Educationupdate?ID=${ID}`}>
                     <button className="Button"><span>수정</span></button>
                 </Link>
-                <Link href={`http://localhost:3001/api/deleteEducation?ID=${ID}`}>
+                <Link href={`http://3.39.99.94:3001/api/deleteEducation?ID=${ID}`}>
                     <button className="Button"><span>삭제</span></button>
                 </Link>
             </div>
@@ -51,7 +51,7 @@ export default function EducationSelect() {
                 <p className="description">수학구분: {displaystate(data[0]?.state)}</p>
                 <p className="description">입학일자: {data[0]?.admission_date.substring(0, 10)}</p>
                 <p className="description">졸업(예정)일자: {data[0]?.graduate_date.substring(0, 10)}</p>
-                <Image src={`http://localhost:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
+                <Image src={`http://3.39.99.94:3001/files/${data[0]?.certificate}`} width={250} height={250} alt="certificate"/>
             </div>
             <style jsx> {`
                 .ButtonArea {

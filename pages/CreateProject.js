@@ -14,7 +14,7 @@ export default function CreateProject() {
             <button className={`${styles.Button}`} form="ProjectProps" type="submit"><span>게시</span></button>
         </div>
         <div className={`${styles.MainArea}`}>
-            <form id="ProjectProps" action="http://localhost:3001/api/insertProject" method="POST" encType="multipart/form-data">
+            <form id="ProjectProps" action="http://3.39.99.94:3001/api/insertProject" method="POST" encType="multipart/form-data">
                 <p>
                     <input type="text" name="Title" className={`${styles.title}`} defaultValue="제목을 입력하세요"/>
                 </p>

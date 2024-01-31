@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["localhost"]
+    domains: ["3.39.99.94"]
   },
   async redirects() {
     return [

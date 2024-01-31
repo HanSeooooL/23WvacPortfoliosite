@@ -13,7 +13,7 @@ export default function Projectupdate() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/projectSelect?ID=${ID}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -32,7 +32,7 @@ export default function Projectupdate() {
             <button className={`${styles.Button}`} form="ProjectProps" type="submit"><span>수정</span></button>
         </div>
         <div className={`${styles.MainArea}`}>
-            <form id="ProjectProps" action="http://localhost:3001/api/updateProject" method="POST">
+            <form id="ProjectProps" action="http://3.39.99.94:3001/api/updateProject" method="POST">
                 <p>
                     <input type="text" name="Title" className={`${styles.title}`} defaultValue={`${params.get('title')}`}/>
                 </p>

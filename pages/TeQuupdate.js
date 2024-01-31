@@ -15,7 +15,7 @@ export default function TeQuupdate() {
                 const response = await axios({
                     method: 'get',
                     url: `/DB/TeQuSelect?NAME=${name}&HOST=${host}`,
-                    baseURL: 'http://localhost:3001/api',
+                    baseURL: 'http://3.39.99.94:3001/api',
                     timeout: 2000
                 });
                 console.log(response.data)
@@ -34,7 +34,7 @@ export default function TeQuupdate() {
                 <button className={`${styles.Button}`} form="TeQuProps" type="submit"><span>게시</span></button>
             </div>
             <div className={`${styles.MainArea}`}>
-                <form id="TeQuProps" method="POST" action="http://localhost:3001/api/updateTeQu">
+                <form id="TeQuProps" method="POST" action="http://3.39.99.94:3001/api/updateTeQu">
                     <input type="text" name="name" className={`${styles.title}`} defaultValue={`${params.get('NAME')}`}/>
                     <p>
                         테스트 주관기관: <input type="text" name="host" className="Host" defaultValue={`${params.get('HOST')}`}/>
