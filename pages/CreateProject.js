@@ -1,3 +1,4 @@
+import { getTodayFormInputDate } from "@/components/Scripts/etcscripts";
 import styles from "@/styles/createproject.module.css"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -24,7 +25,7 @@ export default function CreateProject() {
                 <p>
                     GitHub: <input type="text" name="github" className={`${styles.githubLink}`} />
                 </p>
-                    제작 기간: <input type="date" name="date" /> ~ <input type="date" name="date" />
+                    제작 기간: <input type="date" name="date" defaultValue={getTodayFormInputDate()}/> ~ <input type="date" name="date" defaultValue={getTodayFormInputDate()}/>
                 <div className={`${styles.uploadfiles}`}>
                     첨부파일 <br />
                     <input type="file" name="myFiles" multiple/>

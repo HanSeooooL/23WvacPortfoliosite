@@ -55,7 +55,7 @@ export default function ProjectSelect() {
                             return (
                                 <div key={list.file}>
                                     <p>
-                                        {list.origianl_name}   <Link href={`http://localhost:3001/api/File?file=${list.file}`}><button>다운로드</button></Link>
+                                        {list.origianl_name}   <Link href={`http://localhost:3001/api/File?file=${list.file}`} target="_blank"><button>다운로드</button></Link>
                                     </p>
                                 </div>
                             )

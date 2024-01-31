@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "@/styles/Extrality-Activites.module.css"
 const axios = require('axios')
 
-export default function Contact() {
+export default function ManageContact() {
     const [data, setData] = useState([])
     useEffect(() => {
         (async() => {
@@ -21,33 +21,28 @@ export default function Contact() {
             }
         })();
     }, [])
+
     return (
         <>
             <div className={`${styles.mainscreen}`}>
                 <div className={`${styles.mainheader}`}>
+                    <Link href="/Extrality-Activites">
+                    <button className={`${styles.Button}`} style={{width:60}}><span>Back</span></button>
+                    </Link>
                     <div>
-                        <p>연락처</p>
-                    </div>
-                    <div>
-                        <Link href="http://localhost:3000/CreateContact" className={`${styles.Button}`}>
-                            <button>+</button>
-                        </Link>
-                        <Link href="http://localhost:3000/ManageContact" className={`${styles.Button}`}>
-                            <button>관리</button>
-                        </Link>
+                        <button className={`${styles.Button}`} style={{width: 60}} form="checkedContact" type="submit">삭제</button>
                     </div>
                 </div>
+                <form id="checkedContact" method="POST" action="http://localhost:3001/api/deleteContact">
                 {data.map((list) => {
                     return (
                         <div key={list.ID} className={`${styles.datascreen}`}>
-                            <p>{list.category}</p>
-                            <p>{list.detail}</p>
-                            <Link href="http://localhost:3000/ContactSelect" className={`${styles.Button}`}>
-                                <button>✓</button>
-                            </Link>
+                            <input type="checkbox" name="contact" value={list.ID} />
+                            <label for={list.ID}>{list.category} {list.detail}</label>
                         </div>
                     )
                 })}
+                </form>
             </div>
         </>
     )

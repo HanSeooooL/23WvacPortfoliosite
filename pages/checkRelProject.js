@@ -39,7 +39,7 @@ export default function CheckRelProject() {
                 {project.map((list) => {
                     return (
                         <div key={list.ID} className={`${styles.datascreen}`}>
-                            <input type="checkbox" name={list.ID} id={list.ID} />
+                            <input type="checkbox" name='relproj' value={list.ID} />
                             <label for={list.ID}>{list.title}</label>
                         </div>
                     )

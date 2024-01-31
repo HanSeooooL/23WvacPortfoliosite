@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 import styles from "@/styles/createEx_Ac.module.css"
+import { getTodayFormInputDate } from "@/components/Scripts/etcscripts"
 
 export default function CreateTeQu() {
     const router = useRouter()
@@ -19,7 +20,7 @@ export default function CreateTeQu() {
                         테스트 주관기관: <input type="text" name="host" className="Host" />
                     </p>
                     <p>
-                        취득일자: <input type="date" name="acquisition_date" className="Acda" />
+                        취득일자: <input type="date" name="acquisition_date" className="Acda" defaultValue={getTodayFormInputDate()}/>
                     </p>
                     <p>
                         자격증명서: <input type="file" name="myFiles" />

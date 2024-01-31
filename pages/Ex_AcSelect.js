@@ -36,11 +36,13 @@ export default function Ex_AcSelect() {
             <div>
                 <Link href={`Ex_Acupdate`}>
                     <button className="Button" onClick={() => {
+                        let relpro = []
                         setCookie('title' ,document.getElementById("title").value, 5)
                         setCookie('host', document.getElementById("host").value, 5)
                         setCookie('awarded', document.getElementById("awarded").value, 5)
                         setCookie('start', document.getElementById("start").value, 5)
                         setCookie('finish', document.getElementById("finish").value, 5)
+                        setCookie('ID', data[0]?.ID)
                         for(let i = 0; i < data.length; i++) {
                             relpro.push(String(data[i].Pro_ID))
                         }
@@ -66,7 +68,7 @@ export default function Ex_AcSelect() {
                     <p>연관 프로젝트</p>
                     {data.map((list) => {
                         return (
-                            <div key={list.ID} className={`${styles.datascreen}`}>
+                            <div key={list.Pro_ID} className={`${styles.datascreen}`}>
                                 {list.Pro_title}
                                 <Link href={`http://localhost:3000/ProjectSelect?ID=${list.Pro_ID}`} className={`${styles.Button}`}>
                                     <button>✓</button>

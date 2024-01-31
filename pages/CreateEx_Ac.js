@@ -5,7 +5,7 @@ import Script from "next/script"
 import { setCookie, deleteCookie, getCookie } from "@/components/Scripts/cookiehandle"
 import { useEffect, useState } from "react"
 const axios = require('axios')
-import { getKeyByValue } from "@/components/Scripts/etcscripts"
+import { getKeyByValue, getTodayFormInputDate } from "@/components/Scripts/etcscripts"
 
 export default function CreateEx_Ac() {
     const router = useRouter()
@@ -51,7 +51,7 @@ export default function CreateEx_Ac() {
                         수상여부: <input type="text" name="awarded" id="awarded" className={`${styles.awarded}`}/>
                     </p>
                     <p>
-                        행사 기간: <input type="date" name="start" id="start" /> ~ <input type="date" name="finish" id="finish" />
+                        행사 기간: <input type="date" name="start" id="start" defaultValue={getTodayFormInputDate()}/> ~ <input type="date" name="finish" id="finish" defaultValue={getTodayFormInputDate()}/>
                     </p>
                     <p>
                         대회 사이트: <input type="text" name="link" id="link" className= {`${styles.link}`} />
@@ -68,7 +68,7 @@ export default function CreateEx_Ac() {
                             <span>연관 프로젝트</span>
                         </button>
                     </Link>
-                    <input type="text" name='relprojectID' id='relprojectID' value={JSON.stringify(Object.keys(router.query))} />
+                    <input type="text" name='relprojectID' id='relprojectID' value={router.query.relproj} />
                 </form>
             </div>
             <Script src="../components/Scripts/cookiehandle.js" />

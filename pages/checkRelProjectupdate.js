@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "@/styles/project.module.css"
 const axios = require('axios')
 
-export default function CheckRelProject() {
+export default function CheckRelProjectupdate() {
     const [project, setProject] = useState([])
     useEffect(() => {
         (async() => {
@@ -24,31 +24,27 @@ export default function CheckRelProject() {
     return (
         <>
             <div className={`${styles.mainscreen}`}>
+                <div className={`${styles.ButtonArea}`}>
+                    <Link href="/CreateEx_Ac">
+                        <button className={`${styles.Button}`} style={{width: 60}}><span>Back</span></button>
+                    </Link>
+                    <button className={`${styles.Button}`} form="RelProjectssel" type="submit" style={{width: 60}}><span>완료</span></button>
+                </div>
                 <div className={`${styles.mainheader}`}>
                     <div>
-                        <p>프로젝트</p>
-                    </div>
-                    <div>
-                        <Link href="http://localhost:3000/CreateProject" className={`${styles.Button}`}>
-                            <button>+</button>
-                        </Link>
+                        <p>연관 프로젝트 선택</p>
                     </div>
                 </div>
+                <form id="RelProjectssel" method="GET" action="http://localhost:3000/Ex_Acupdate">
                 {project.map((list) => {
                     return (
                         <div key={list.ID} className={`${styles.datascreen}`}>
-                            <p>{list.title}</p>
-                            <p>{list.start.substring(0, 10)}</p>
-                            <p>{list.finish.substring(0, 10)}</p>
-                            <Link href={`${list.link}`}>
-                                <button className="imgbutton"></button>
-                            </Link>
-                            <Link href={`http://localhost:3000/ProjectSelect?ID=${list.ID}`} className={`${styles.Button}`}>
-                                <button>✓</button>
-                            </Link>
+                            <input type="checkbox" name='relproj' value={list.ID} />
+                            <label for={list.ID}>{list.title}</label>
                         </div>
                     )
                 })}
+                </form>
             </div>
         </>
     )

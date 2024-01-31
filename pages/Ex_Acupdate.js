@@ -11,6 +11,7 @@ export default function Ex_Acupdate() {
     let router = useRouter()
     let ID = Number(params.get('ID'))
     useEffect(() => {
+        document.getElementById('ID').value = getCookie('ID')
         document.getElementById('title').value = getCookie('title')
         document.getElementById("host").value = getCookie('host')
         document.getElementById("awarded").value = getCookie('awarded')
@@ -39,6 +40,7 @@ export default function Ex_Acupdate() {
                     deleteCookie('start')
                     deleteCookie('finish')
                     deleteCookie('link')
+                    deleteCookie('ID')
                 }
                 }><span>게시</span></button>
             </div>
@@ -58,7 +60,7 @@ export default function Ex_Acupdate() {
                     <p>
                         대회 사이트: <input type="text" name="link" id="link" className= {`${styles.link}`} />
                     </p>
-                    <Link href="/checkRelProject">
+                    <Link href="/checkRelProjectupdate">
                         <button className={`${styles.Button}`} style={{width: 130}} onClick={() => {
                             setCookie('title' ,document.getElementById("title").value, 5)
                             setCookie('host', document.getElementById("host").value, 5)
@@ -71,6 +73,8 @@ export default function Ex_Acupdate() {
                         </button>
                     </Link>
                     <input type="text" name='relprojectID' id='relprojectID'/>
+
+                    <input type="text" name="ID" id="ID" />
                 </form>
             </div>
             <Script src="../components/Scripts/cookiehandle.js" />

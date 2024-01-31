@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 import styles from "@/styles/createEx_Ac.module.css"
+import { getTodayFormInputDate } from "@/components/Scripts/etcscripts"
 
 export default function CreateLaCe() {
     const router = useRouter()
@@ -22,7 +23,7 @@ export default function CreateLaCe() {
                         주관기관: <input type="text" name="host" className="Host" />
                     </p>
                     <p>
-                        시험일자: <input type="date" name="acquisition_date" className="Acda" />
+                        시험일자: <input type="date" name="acquisition_date" className="Acda" defaultValue={getTodayFormInputDate()}/>
                     </p>
                     <p>
                         자격증명서 <input type="file" name="myFiles" />

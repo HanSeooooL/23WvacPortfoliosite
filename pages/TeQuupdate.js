@@ -42,6 +42,8 @@ export default function TeQuupdate() {
                     <p>
                         취득일자: <input type="date" name="acquisition_date" className="Acda" defaultValue={`${params.get('acquisition_date')}`}/>
                     </p>
+                    <input type="hidden" name="ex_name" value={`${name}`} />
+                    <input type="hidden" name="ex_host" value={`${host}`} />
                 </form>
             </div>
             <style jsx>
